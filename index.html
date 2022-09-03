@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive card details form</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="card-holder">
+        <div class="cards">
+          <div class="card-back">
+            <img src="images/bg-card-back.png" alt="back side of a credit card" />
+            <p class="cvc-display">000</p>
+          </div>
+          <div class="card-front">
+            <img src="images/bg-card-front.png" alt="front side of a credit card" />
+            <div class="card-front-content">
+              <div class="card-logo">
+                <img src="images/card-logo.svg" alt="Two circles, one white, one transparent" />
+              </div>
+              <div class="card-text">
+                <p class="card-number-display">0000 0000 0000 0000</p>
+                <div class="card-footer">
+                  <p class="card-name-display">JANE APPLESEED</p>
+                  <div class="date-display">
+                    <p class="month-display">00</p>
+                    <p>/</p>
+                    <p class="year-display">00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-details">
+        <form action="">
+          
+          <div class="form">
+            <div class="form-group">
+              <label for="card-name">CARDHOLDER NAME</label>
+              <input
+                type="text"
+                id="card-name"
+                placeholder="e.g. Jane Appleseed"
+              />
+              <span class="error-msg">Can't be blank</span>
+            </div>
+            <div class="form-group">
+              <label for="card-number">CARD NUMBER</label>
+              <input
+                type="text"
+                id="card-number"
+                placeholder="e.g. 1234 5678 9123 0000"
+                maxlength="19"
+              />
+              <span class="error-msg">Can't be blank</span>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <div class="card-date">
+                  <p>Exp. Date (MM/YY)</p>
+                  <div class="date">
+                    <input
+                      type="text"
+                      id="month"
+                      placeholder="MM"
+                      maxlength="2"
+                    />
+                    <input type="text" id="year" placeholder="YY" maxlength="2" />
+                    <span class="error-msg">Can't be blank</span>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="form-group cvc-info">
+                  <label for="cvc">CVC</label>
+                  <input
+                    type="text"
+                    id="cvc"
+                    placeholder="e.g. 123"
+                    minlength="1"
+                    maxlength="3"
+                  />
+                  <span class="error-msg">Can't be blank</span>        
+              </div>
+            </div>
+            <button class="confirm-btn">Confirm</button>
+          </div>
+          <div class="success">
+            <div class="success-img">
+              <img src="images/icon-complete.svg" alt="check mark" />
+            </div>
+            <h1>THANK YOU!</h1>
+            <p>We've added your card details</p>
+            <button type="submit" class="continue-btn">Continue</button>
+          </div>
+        </div>
+        </form>
+       
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
