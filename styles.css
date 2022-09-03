@@ -1,0 +1,283 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Lightgrayishviolet: hsl(270, 3%, 87%);
+  --Darkgrayishviolet: hsl(279, 6%, 55%);
+  --Verydarkviolet: hsl(278, 68%, 11%);
+  --Darkviolet: hsl(249, 99%, 64%);
+  --Lineargradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --Red: hsl(0, 100%, 66%);
+}
+
+input {
+  outline: none;
+  border: 1px solid var(--Lightgrayishviolet);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+label,
+p {
+  font-size: 13px;
+  color: var(--Verydarkviolet);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+input::placeholder {
+  font-size: 18px;
+  color: var(--Lightgrayishviolet);
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-holder {
+  background-image: url("images/bg-main-mobile.png");
+  width: 100%;
+  height: 250px;
+  padding: 40px 20px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards {
+  width: 330px;
+}
+.card-back {
+  border-radius: 10px;
+  margin-left: auto;
+  width: 280px;
+  height: 160px;
+  position: relative;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.cvc-display {
+  position: absolute;
+  top: 45%;
+  left: 76%;
+  font-size: 10px;
+  color: white;
+}
+.card-front {
+  width: 280px;
+  height: 160px;
+  position: absolute;
+  top: 52.5%;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.card-back img,
+.card-front img {
+  width: 100%;
+  height: 100%;
+}
+.card-front-content {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+}
+.card-logo {
+  width: 85px;
+}
+.card-logo img {
+  width: 100%;
+  height: 48px;
+}
+.card-text p {
+  color: white;
+}
+.card-number-display {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -10px;
+  width: 100%;
+}
+.date-display {
+  display: flex;
+}
+.card-footer p {
+  font-size: 11px;
+  font-weight: lighter;
+}
+.card-details {
+  padding-top: 6rem;
+}
+form {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.form-grid .form-group {
+  width: 48%;
+}
+.card-date {
+  display: flex;
+  flex-direction: column;
+}
+.date {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.date input {
+  width: 47%;
+}
+.cvc-info input {
+  width: 100%;
+}
+button {
+  cursor: pointer;
+  background-color: var(--Verydarkviolet);
+  color: white;
+  padding: 13px;
+  margin: 20px 0;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 100%;
+}
+.cvc-info {
+  display: flex;
+  flex-direction: column;
+}
+.error-msg {
+  color: var(--Red);
+  font-size: 12px;
+  margin-top: -10px;
+  padding-bottom: 20px;
+  display: none;
+}
+.error .error-msg {
+  display: flex;
+}
+.active {
+  border: 1px solid var(--Darkviolet);
+}
+.error input {
+  border: 1px solid var(--Red);
+}
+.date.error-msg {
+  width: 100%;
+}
+.success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+}
+.success h1 {
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 0.2em;
+  color: var(--Verydarkviolet);
+  padding: 30px 0 20px 0;
+}
+.success p {
+  color: var(--Darkgrayishviolet);
+  font-size: 16px;
+}
+.success button {
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .card-details,
+  .card-holder {
+    width: 45%;
+  }
+  .card-holder {
+    background-image: url("images/bg-main-desktop.png");
+    background-size: cover;
+    background-position-x: -15em;
+    min-height: 100vh;
+    padding: 0;
+  }
+  .cards {
+    width: 400px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .card-front {
+    position: relative;
+    width: 100%;
+    height: 225px;
+    top: unset;
+  }
+
+  .card-number-display {
+    font-size: 25px;
+  }
+  .card-back {
+    width: 100%;
+    height: 225px;
+    position: relative;
+    margin-top: 30px;
+  }
+  .card-front-content {
+    height: 95%;
+  }
+  .card-footer p,
+  .cvc-display {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1000px) {
+  main {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .card-front-content {
+    padding: 20px 30px;
+  }
+  .card-back {
+    margin-left: 20%;
+  }
+  .card-details {
+    margin-left: 5em;
+    padding: 0;
+  }
+  form,
+  .success {
+    width: 400px;
+  }
+}
