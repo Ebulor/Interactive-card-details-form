@@ -59,7 +59,7 @@ cardNumber.addEventListener("input", (e) => {
     .replace(/(.{4})/g, "$1 ")
     .trim();
   const cardNumberError = cardNumber.parentElement.children[2];
-  if (e.target.value.length < 19 && isNaN(e.target.value)) {
+  if (e.target.value.length < 19) {
     cardNumber.parentElement.classList.add("error");
     cardNumberError.textContent = "Wrong Format";
   } else {
